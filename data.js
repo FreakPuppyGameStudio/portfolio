@@ -52,6 +52,25 @@ const PROJECTS = [
     ]
   },
   {
+    id: 'motus',
+    group: 'software',
+    name: 'MOTUS',
+    category: 'Mobile Prototype / Usage-Based Insurance',
+    status: 'Academic prototype',
+    version: '',
+    badge: 'progress',
+    cover: 'MOTUS',
+    description: 'Academic prototype of a usage-based automotive insurance app. It includes the core GPS and sensor module, a driving-score engine, a UBI simulator and synthetic test data. Testing and calibration are in progress.',
+    features: ['GPS and sensor module', 'Driving-score engine', 'UBI simulator', 'Synthetic test data'],
+    tech: ['Flutter', 'Dart'],
+    links: [
+      { label: 'Download', href: 'https://drive.google.com/file/d/1U2z1uNYUwE8FSkBnWR71BH-bPkbYhvb0/view?usp=sharing', primary: true },
+      { label: 'GitHub', href: PROFILE.github }
+    ],
+    note: 'The download opens in Google Drive.',
+    install: null
+  },
+  {
     id: 'creacarti',
     group: 'software',
     name: 'Creacarti',
@@ -222,6 +241,36 @@ const PROJECTS = [
     links: [{ label: 'View on itch.io', href: 'https://dxgpanic-studios.itch.io/1life', primary: true }],
     note: '',
     install: null
+  }
+];
+
+
+const RESUME = {
+  href: 'downloads/Santiago_Morales_Resume.pdf',
+  label: 'Download resume (PDF)'
+};
+
+const CERTIFICATES = [
+  {
+    title: 'Elements of AI',
+    issuer: 'University of Helsinki / MinnaLearn',
+    date: 'October 21, 2025',
+    detail: '2 ECTS credits online course',
+    image: 'certificates/elements-of-ai.jpeg'
+  },
+  {
+    title: 'PY101x: Python: learn to program',
+    issuer: 'UPValenciaX (Universitat Politècnica de València) via edX',
+    date: 'May 17, 2025',
+    detail: 'Verified certificate · 32 hours',
+    image: 'certificates/py101x-python.jpeg'
+  },
+  {
+    title: 'Curso de Hacking Ético: de 0 a Hackear Aplicaciones',
+    issuer: 'BIG School',
+    date: '28/10/2026',
+    detail: 'Certificate of attendance · 6 hours',
+    image: 'certificates/hacking-etico-big-school.jpeg'
   }
 ];
 

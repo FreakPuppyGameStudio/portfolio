@@ -189,6 +189,20 @@ a { color: inherit; }
 .link-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .note { color: var(--muted); font-size: .9rem; margin: 16px 0 0; }
 
+/* ---------- Certificates ---------- */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+.cert {
+  margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column; transition: border-color .25s ease;
+}
+.cert:hover { border-color: #3a4352; }
+.cert-img { display: block; background: #0c0e12; aspect-ratio: 4 / 3; overflow: hidden; }
+.cert-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.cert figcaption { padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.cert h4 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.1rem; line-height: 1.35; }
+.cert .meta { margin: 0; font-size: .72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+.cert .desc { margin: 0; color: var(--muted); font-size: .9rem; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 44px; padding-top: 64px; }
