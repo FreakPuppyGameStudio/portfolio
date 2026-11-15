@@ -45,3 +45,17 @@ if (certEl && typeof CERTIFICATES !== 'undefined') {
       </figcaption>
     </figure>`).join('');
 }
+
+// Momentos
+const momentEl = document.getElementById('moment-grid');
+if (momentEl && typeof MOMENTS !== 'undefined') {
+  momentEl.innerHTML = MOMENTS.map(m => `
+    <figure class="moment">
+      <div class="moment-img"><img src="${m.image}" alt="${esc(m.title)}" loading="lazy"></div>
+      <figcaption>
+        <p class="meta">${esc(m.meta)}</p>
+        <h4>${esc(m.title)}</h4>
+        <p class="desc">${esc(m.caption)}</p>
+      </figcaption>
+    </figure>`).join('');
+}

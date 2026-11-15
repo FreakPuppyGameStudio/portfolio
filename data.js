@@ -274,4 +274,25 @@ const CERTIFICATES = [
   }
 ];
 
+const MOMENTS = [
+  {
+    image: 'moments/swifties-society.jpeg',
+    title: 'Swifties Society',
+    meta: 'Fall 2026 · Student organization',
+    caption: 'Student organization focused on SwiftUI and Apple development.'
+  },
+  {
+    image: 'moments/hackztecs.jpeg',
+    title: 'Hackztecs',
+    meta: 'Fall 2026 · Student organization',
+    caption: 'Student organization focused on cybersecurity.'
+  },
+  {
+    image: 'moments/expo-artes-2025.jpeg',
+    title: 'Expo Artes 2025',
+    meta: '2025 · Final art exhibition',
+    caption: 'Presented RE:ME: The Demo and Danny, a psychological horror platformer made for the event.'
+  }
+];
+
 const BADGE_LABELS = { progress: 'In development', ok: 'Available', old: 'Outdated' };
