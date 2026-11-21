@@ -95,7 +95,7 @@ const PROJECTS = [
     group: 'outdated',
     name: 'TypeTela',
     category: 'Sustainability / Circular Economy',
-    status: 'Outdated',
+    status: 'Client commission',
     version: '',
     badge: 'old',
     cover: 'TYPETELA',
@@ -113,7 +113,7 @@ const PROJECTS = [
     group: 'outdated',
     name: 'SOSMAP',
     category: 'Geolocation / Emergency Information',
-    status: 'Outdated',
+    status: 'Client commission',
     version: '',
     badge: 'old',
     cover: 'SOSMAP',
@@ -131,7 +131,7 @@ const PROJECTS = [
     group: 'outdated',
     name: 'MUNSecretary',
     category: 'Software',
-    status: 'Outdated',
+    status: 'Client commission',
     version: '',
     badge: 'old',
     cover: 'MUNSECRETARY',
@@ -295,7 +295,7 @@ const MOMENTS = [
   }
 ];
 
-const BADGE_LABELS = { progress: 'In development', ok: 'Available', old: 'Outdated' };
+const BADGE_LABELS = { progress: 'In development', ok: 'Available', old: 'No more updates' };
 
 // ---------- Medios y enlaces por proyecto ----------
 // images: galería. coverImg: portada en la tarjeta. videos: URLs de YouTube.
@@ -371,7 +371,9 @@ PROJECTS.forEach(p => {
 // Tema visual según el tipo de proyecto
 function themeOf(p) {
   if (p.group === 'outdated') return 'outdated';
+  if (p.group === 'tool') return 'tool';
   if (p.group === 'game') return 'game';
+  if (p.group === 'tool') return 'tool';
   if (p.id === 'creacarti') return 'web';
   if ((p.category || '').toLowerCase().includes('cybersecurity')) return 'security';
   return 'software';
@@ -404,3 +406,77 @@ PROJECTS.forEach(p => {
   if (p.id === 'motus') p.coverImg = 'media/motus-logo.jpg';
   if (p.id === 'keypaste') p.coverImg = 'media/keypaste-logo.jpg';
 });
+
+// ---------- Herramientas ----------
+PROJECTS.push({
+  id: 'sori',
+  group: 'tool',
+  name: 'Sori AI',
+  category: 'Local AI Assistant / Development Tool',
+  status: 'Working locally',
+  version: '',
+  badge: 'ok',
+  cover: 'SORI AI',
+  description: 'A personal AI assistant that runs 100% locally and offline, for studying, working with documents and programming. It runs on your own laptop with an NVIDIA GPU, with no accounts, no cloud and no telemetry.',
+  features: [
+    'Chat: general assistant in Spanish and English, with local memory',
+    'Study: indexes PDF, TXT and MD files, answers with citations, summarizes, and builds guides and quizzes',
+    'Dev: help with Godot 4, Ren\'Py, Python, C++, Git and Linux (suggests commands, never runs them)',
+    'Memory: persistent notes in SQLite that you can inspect and edit',
+    'Privacy: the server listens only on 127.0.0.1:8080, with no telemetry at runtime'
+  ],
+  tech: ['Python 3.12 (stdlib)', 'llama.cpp (Vulkan)', 'Qwen3-4B-Instruct-2507', 'SQLite FTS5'],
+  links: [
+    { label: 'GitHub', href: PROFILE.github, primary: true }
+  ],
+  note: 'Requires Linux x86_64, an NVIDIA GPU with Vulkan (6 GB VRAM recommended; CPU works but is slower).',
+  install: [
+    'Start the local server: sori start',
+    'Chat in the terminal: sori chat',
+    'Index a document: sori study index ~/Documents/notes.pdf',
+    'Ask about it: sori study ask "What does the document say about photolysis?"',
+    'Check system status: sori status',
+    'Stop and free the GPU: sori stop'
+  ],
+  images: [],
+  videos: [],
+  coverImg: null
+});
+
+// ---------- Logros ----------
+const ACHIEVEMENTS = [
+  {
+    date: 'Nov 2026',
+    title: 'GGJ-GDC 2027 Scholarship',
+    org: 'Global Game Jam',
+    detail: 'Selected for the 2027 GGJ-GDC conference scholarship, given to especially engaged members of the Global Game Jam community.',
+    stats: []
+  },
+  {
+    date: '2026',
+    title: 'Don\'t Text Her · GMTK Game Jam 2026',
+    org: 'DXGPANIC Studios · Game Maker\'s Toolkit',
+    detail: 'Submitted to a jam with 10,515 entries. Ranked in five judging categories, based on 10 ratings.',
+    stats: [
+      'Narrative #4,470',
+      'Audio #7,509',
+      'Creativity #7,724',
+      'Artwork #8,293',
+      'Enjoyment #8,752'
+    ]
+  },
+  {
+    date: '2026',
+    title: 'KID_OS · El jam game jam (for teens)',
+    org: 'DXGPANIC Studios · Hack Club',
+    detail: 'Submitted to a jam with 230 entries. Ranked in six judging categories, based on 5 ratings.',
+    stats: [
+      'Enjoyment #60',
+      'Visual elements #62',
+      'Audio #71',
+      'Overall #74',
+      'Creativity #83',
+      'Theme #142'
+    ]
+  }
+];

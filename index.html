@@ -2,26 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Santiago Morales Itzcoatl — Software & Game Developer</title>
   <meta name="description" content="Independent software developer and game developer from Mexico. Building software, experimenting with technology and creating independent games.">
-  <meta name="theme-color" content="#0f1217">
+  <meta name="theme-color" content="#0b0d10">
   <link rel="icon" href="media/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="term-body">
 
 <header class="site-header">
-  <a href="#top" class="logo"><img src="media/avatar.jpg" alt="" width="34" height="34"><span>Santiago Morales</span></a>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#ecosystem">Ecosystem</a>
-    <a href="#contact">Contact</a>
+  <div class="titlebar">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="path"><b>santi@pop-os</b>:~/portfolio</span>
+  </div>
+  <nav class="tabs">
+    <a href="#projects">./projects</a>
+    <a href="#about">./about</a>
+    <a href="#skills">./skills</a>
+    <a href="#certs">./certs</a>
+    <a href="#moments">./moments</a>
+    <a href="#contact" class="tab-cta">./contact</a>
   </nav>
 </header>
 
@@ -29,14 +33,16 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
     <div class="hero-text">
-      <p class="eyebrow">Independent Software Developer / Game Developer</p>
-      <h1>Hi, I'm Santiago.</h1>
+      <p class="prompt"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ <span class="typed" data-type="whoami"></span><span class="caret" aria-hidden="true"></span></p>
+      <h1>Santiago Morales <span class="grad">Itzcoatl</span></h1>
       <p class="subtitle">Software Developer &amp; Game Developer.</p>
       <p class="lead">Building software, experimenting with technology and creating independent games.</p>
       <div class="cta-row">
-        <a href="#projects" class="btn btn-primary">Explore My Projects</a>
-        <a href="#about" class="btn btn-ghost">About Me</a>
+        <a href="#projects" class="btn btn-primary">Explore projects</a>
+        <a href="#about" class="btn btn-ghost">About me</a>
         <a href="downloads/Santiago_Morales_Resume.pdf" class="btn btn-ghost" download>Resume (PDF)</a>
       </div>
       <ul class="tags">
@@ -45,29 +51,33 @@
         <li>Cybersecurity</li>
       </ul>
     </div>
-    <div class="hero-side">
-      <figure class="avatar-card">
-        <img src="media/avatar.jpg" alt="Santiago Morales Itzcoatl" width="160" height="160">
-        <figcaption>
-          <strong>Santiago Morales Itzcoatl</strong>
-          <span>Software &amp; Game Developer · Mexico</span>
-        </figcaption>
-      </figure>
-      <div class="hero-panel" aria-hidden="true">
-        <div class="panel-row"><span>Focus</span><strong>Software · Games · Cybersecurity</strong></div>
-        <div class="panel-row"><span>Studio</span><strong>DXGPANIC Studios</strong></div>
-        <div class="panel-row"><span>Initiative</span><strong>Finovra</strong></div>
-        <div class="panel-row"><span>Education</span><strong>Computer Systems Engineering</strong></div>
+
+    <aside class="fetch" aria-label="System information">
+      <div class="fetch-head">
+        <img src="media/avatar.jpg" alt="Santiago Morales Itzcoatl" width="84" height="84">
+        <div>
+          <p class="fetch-user">santi<span>@</span>pop-os</p>
+          <p class="fetch-sub">Software &amp; Game Developer</p>
+        </div>
       </div>
-    </div>
+      <dl class="fetch-list">
+        <div><dt>OS</dt><dd>Pop!_OS 24.04 LTS</dd></div>
+        <div><dt>DE</dt><dd>COSMIC</dd></div>
+        <div><dt>Shell</dt><dd>bash</dd></div>
+        <div><dt>Focus</dt><dd>Software · Games · Cybersecurity</dd></div>
+        <div><dt>Studio</dt><dd>DXGPANIC Studios</dd></div>
+        <div><dt>Initiative</dt><dd>Finovra</dd></div>
+        <div><dt>Education</dt><dd>Computer Systems Engineering · UDLAP</dd></div>
+        <div><dt>Stack</dt><dd>C/C++ · Python · Godot · Ren'Py · Flutter</dd></div>
+        <div><dt>Languages</dt><dd>Spanish (native) · English (advanced)</dd></div>
+        <div><dt>Location</dt><dd>Mexico</dd></div>
+      </dl>
+    </aside>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="section">
-    <div class="section-head">
-      <h2>Projects</h2>
-      <p>Software and games built as independent work.</p>
-    </div>
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ ls -l projects/</p>
 
     <h3 class="group-title">Software Development</h3>
     <div class="grid" id="grid-software"></div>
@@ -75,15 +85,13 @@
     <h3 class="group-title">Game Development <span class="sub">DXGPANIC Studios</span></h3>
     <div class="grid" id="grid-game"></div>
 
-    <h3 class="group-title">Outdated Projects</h3>
+    <h3 class="group-title">Client Commissions <span class="sub">No more updates</span></h3>
     <div class="grid" id="grid-outdated"></div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
-    <div class="section-head">
-      <h2>About Me</h2>
-    </div>
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ cat about.md</p>
     <div class="about">
       <div class="about-text">
         <p class="lead-text">I'm Santiago Morales Itzcoatl, a Mexican software developer and Computer Systems Engineering student.</p>
@@ -91,7 +99,7 @@
         <p>My projects range from cybersecurity tools and productivity applications to experimental indie games. I enjoy learning by creating and turning ideas into functional software.</p>
       </div>
       <aside class="interests">
-        <h3>Interests &amp; Areas</h3>
+        <h3>Interests &amp; areas</h3>
         <ul>
           <li>Software Development</li>
           <li>Game Development</li>
@@ -107,9 +115,7 @@
 
   <!-- SKILLS -->
   <section id="skills" class="section">
-    <div class="section-head">
-      <h2>Technologies &amp; Skills</h2>
-    </div>
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ tree skills/</p>
     <div class="skills-grid">
       <div class="skill-group">
         <h3>Programming</h3>
@@ -121,7 +127,12 @@
       </div>
       <div class="skill-group">
         <h3>Development Tools</h3>
-        <ul class="chips"><li>Git</li><li>GitHub</li><li>Linux</li></ul>
+        <ul class="chips">
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>Linux</li>
+          <li><a class="chip-link" href="project.html?id=sori">Sori AI</a></li>
+        </ul>
       </div>
       <div class="skill-group">
         <h3>Cybersecurity</h3>
@@ -130,16 +141,13 @@
     </div>
     <figure class="setup">
       <img src="media/devsetup.png" alt="Desktop running Pop!_OS, shown with fastfetch" loading="lazy">
-      <figcaption>Daily development environment: Pop!_OS with the COSMIC desktop.</figcaption>
+      <figcaption>$ fastfetch — daily development environment: Pop!_OS with the COSMIC desktop.</figcaption>
     </figure>
   </section>
 
   <!-- ECOSYSTEM -->
   <section id="ecosystem" class="section">
-    <div class="section-head">
-      <h2>My Development Ecosystem</h2>
-      <p>Independent identities under which I publish my work.</p>
-    </div>
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ cat identities.txt</p>
     <div class="eco-grid">
       <div class="eco-card">
         <h3>DXGPANIC Studios</h3>
@@ -153,26 +161,52 @@
     </div>
   </section>
 
-  <!-- CERTIFICATES -->
-  <section id="certificates" class="section">
-    <div class="section-head">
-      <h2>Certificates</h2>
-      <p>Courses and programs completed.</p>
+  <!-- LANGUAGES -->
+  <section id="languages" class="section">
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ cat languages.conf</p>
+    <div class="lang-grid">
+      <article class="lang">
+        <h4>English</h4>
+        <p class="lang-level">Bilingual or native</p>
+      </article>
+      <article class="lang">
+        <h4>Spanish</h4>
+        <p class="lang-level">Native</p>
+      </article>
+      <article class="lang">
+        <h4>German</h4>
+        <p class="lang-level">Basic</p>
+        <span class="score">Duolingo score 20 · Nov 2026</span>
+      </article>
+      <article class="lang">
+        <h4>Romanian</h4>
+        <p class="lang-level">Basic</p>
+        <span class="score">Duolingo score 10 · Nov 2026</span>
+      </article>
     </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section">
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ cat achievements.log</p>
+    <div class="log" id="achievement-log"></div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certs" class="section">
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ ls -la ~/certs</p>
     <div class="cert-grid" id="cert-grid"></div>
   </section>
 
   <!-- MOMENTS -->
   <section id="moments" class="section">
-    <div class="section-head">
-      <h2>Moments</h2>
-      <p>Student communities and events.</p>
-    </div>
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ ls moments/</p>
     <div class="moment-grid" id="moment-grid"></div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section contact">
+    <p class="cmd"><span class="ps">santi@pop-os</span>:<span class="pd">~</span>$ ./contact.sh</p>
     <h2>Have an idea or want to collaborate?</h2>
     <p class="lead">Let's connect.</p>
     <ul class="contact-links">
@@ -186,7 +220,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>&copy; <span id="year"></span> Santiago Morales Itzcoatl</p>
+  <p>&copy; <span id="year"></span> Santiago Morales Itzcoatl · built by hand with HTML, CSS and JS</p>
 </footer>
 
 <script src="data.js"></script>
