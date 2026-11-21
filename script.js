@@ -8,9 +8,11 @@ function cardHTML(p) {
   const badge = p.badge ? `<span class="badge badge-${p.badge}">${esc(BADGE_LABELS[p.badge])}</span>` : '';
   const coverClass = p.group === 'game' ? 'cover-game' : p.group === 'outdated' ? 'cover-old' : 'cover-software';
   return `
-    <article class="card ${p.group === 'outdated' ? 'is-outdated' : ''}">
-      <div class="card-cover ${coverClass}">
-        <span class="cover-label">${esc(p.cover)}</span>
+    <article data-theme="${themeOf(p)}" class="card theme-${themeOf(p)} ${p.group === 'outdated' ? 'is-outdated' : ''}">
+      <div class="card-cover ${coverClass} ${p.coverImg ? 'has-img' : ''}">
+        ${p.coverImg
+          ? `<img src="${esc(p.coverImg)}" alt="${esc(p.name)}" loading="lazy">`
+          : `<span class="cover-label">${esc(p.cover)}</span>`}
       </div>
       <div class="card-body">
         <p class="meta">${esc(p.category)}</p>

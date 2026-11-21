@@ -296,3 +296,111 @@ const MOMENTS = [
 ];
 
 const BADGE_LABELS = { progress: 'In development', ok: 'Available', old: 'Outdated' };
+
+// ---------- Medios y enlaces por proyecto ----------
+// images: galería. coverImg: portada en la tarjeta. videos: URLs de YouTube.
+const MEDIA = {
+  'fpd': {
+    coverImg: 'media/finovrafishingdetector1.png',
+    images: ['media/finovrafishingdetector1.png', 'media/finovrafishingdetector2.png', 'media/finovrafishingdetector3.png'],
+    videos: ['https://www.youtube.com/watch?v=-Us8feM7WXE'],
+    links: [
+      { label: 'Download', href: 'downloads/FPD.zip', download: true, primary: true },
+      { label: 'GitHub', href: 'https://github.com/FreakPuppyGameStudio/FINOVRA-PHISHING-DETECTOR' }
+    ],
+    note: 'The download is a password-protected ZIP.'
+  },
+  'motus': {
+    coverImg: 'media/motus1.jpeg',
+    images: ['media/motus1.jpeg', 'media/motus2.jpeg', 'media/motus3.jpeg', 'media/motus4.jpeg']
+  },
+  'typetela': {
+    coverImg: 'media/typetela1.jpeg',
+    images: ['media/typetela1.jpeg', 'media/typetela2.jpeg', 'media/typetela3.jpeg'],
+    links: [
+      { label: 'GitHub repository', href: 'https://github.com/FreakPuppyGameStudio/Typetela', primary: true },
+      { label: 'Open Drive folder', href: 'https://drive.google.com/drive/folders/1EPYGW_kVX3GyWIsGaoLiexbS9YFH1fSL?usp=sharing' }
+    ]
+  },
+  'sosmap': {
+    videos: ['https://www.youtube.com/shorts/SRfhiMVqJAs'],
+    links: [
+      { label: 'GitHub repository', href: 'https://github.com/FreakPuppyGameStudio/SOSMAP', primary: true },
+      { label: 'Open Drive folder', href: 'https://drive.google.com/drive/folders/1B2JREuMPchOwGFAVkRrdwVua0ZIGrRfk?usp=sharing' }
+    ]
+  },
+  'munsecretary': {
+    coverImg: 'media/munlogo.png',
+    images: ['media/mun1.png', 'media/mun2.png', 'media/mun3.png'],
+    links: [
+      { label: 'Play on itch.io', href: 'https://santiagoitzcoatl.itch.io/mun-secretary-program', primary: true },
+      { label: 'GitHub repository', href: 'https://github.com/FreakPuppyGameStudio/munsecretary' }
+    ]
+  },
+  'please-dont-die': {
+    coverImg: 'media/pleasedontdielogo.png',
+    images: ['media/pleasedontdie1.png', 'media/pleasedontdie2.png', 'media/pleasedontdie3.png']
+  },
+  'kid-os': {
+    coverImg: 'media/kidoslogo.png',
+    images: ['media/kidos.png', 'media/kidos2.png', 'media/kidos3.png', 'media/kidos4.png']
+  },
+  'dont-text-her': {
+    coverImg: 'media/donttextherlogo.png',
+    images: ['media/donttexther1.png', 'media/donttexther2.png', 'media/donttexther3.png', 'media/donttexther4.png']
+  },
+  'probabilitat': {
+    coverImg: 'media/probabilitat1.png',
+    images: ['media/probabilitat.png', 'media/probabilitat1.png', 'media/probabilitat2.png']
+  },
+  'reme': {
+    coverImg: 'media/remelogo.png',
+    images: ['media/reme1.png', 'media/reme2.png', 'media/reme3.png']
+  },
+  '1life': {
+    coverImg: 'media/1livelogo.png',
+    videos: ['https://youtu.be/MFYSLJHaNGY']
+  }
+};
+
+PROJECTS.forEach(p => {
+  const m = MEDIA[p.id];
+  if (m) Object.assign(p, m);
+});
+
+// Tema visual según el tipo de proyecto
+function themeOf(p) {
+  if (p.group === 'outdated') return 'outdated';
+  if (p.group === 'game') return 'game';
+  if (p.id === 'creacarti') return 'web';
+  if ((p.category || '').toLowerCase().includes('cybersecurity')) return 'security';
+  return 'software';
+}
+
+// Medios actualizados (segundo lote de capturas y logos)
+const MEDIA_UPDATES = {
+  'keypaste': { images: ['media/keypaste-screenshot.png'] },
+  'creacarti': {
+    coverImg: 'media/creacarti-logo.jpg',
+    images: ['media/creacarti-1.png', 'media/creacarti-2.png']
+  },
+  'probabilitat': {
+    coverImg: 'media/probabilitat-logo.png',
+    images: ['media/probabilitat.png', 'media/probabilitat1.png', 'media/probabilitat2.png']
+  },
+  'typetela': {
+    coverImg: 'media/typetela-logo.png',
+    images: ['media/typetela1.jpeg', 'media/typetela2.jpeg', 'media/typetela3.jpeg']
+  },
+  'fpd': { coverImg: 'media/fpd-logo.jpg' }
+};
+PROJECTS.forEach(p => {
+  const m = MEDIA_UPDATES[p.id];
+  if (m) Object.assign(p, m);
+});
+
+// Logos de MOTUS y KeyPaste
+PROJECTS.forEach(p => {
+  if (p.id === 'motus') p.coverImg = 'media/motus-logo.jpg';
+  if (p.id === 'keypaste') p.coverImg = 'media/keypaste-logo.jpg';
+});

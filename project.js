@@ -40,11 +40,25 @@ function render() {
     return `<a class="btn ${l.primary ? 'btn-primary' : 'btn-ghost'}" href="${esc(l.href)}" ${attrs}>${esc(l.label)}</a>`;
   }).join('');
   const note = p.note ? `<p class="note">${esc(p.note)}</p>` : '';
+  const gallery = p.images && p.images.length
+    ? `<section class="block"><h2>Screenshots</h2><div class="gallery">${p.images.map((src, i) => `
+        <a href="${esc(src)}" target="_blank" rel="noopener" class="gallery-item"><img src="${esc(src)}" alt="${esc(p.name)} screenshot ${i + 1}" loading="lazy"></a>`).join('')}</div></section>`
+    : '';
+  const videos = p.videos && p.videos.length
+    ? `<section class="block"><h2>Video</h2><div class="videos">${p.videos.map(u => {
+        const id = (u.match(/(?:youtu\.be\/|v=|shorts\/)([\w-]{11})/) || [])[1];
+        return id
+          ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${esc(p.name)} video" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`
+          : '';
+      }).join('')}</div></section>`
+    : '';
 
+  main.dataset.theme = themeOf(p);
   main.innerHTML = `
     <section class="detail-head">
       <a class="back" href="index.html#projects">&larr; All projects</a>
       <p class="meta">${esc(p.category)}</p>
+      ${p.coverImg ? `<img class="detail-cover" src="${esc(p.coverImg)}" alt="${esc(p.name)} logo">` : ''}
       <h1>${esc(p.name)}</h1>
       <div class="facts">
         <div class="fact"><span>Status</span><strong>${esc(p.status)}</strong></div>
@@ -58,6 +72,8 @@ function render() {
       <p class="body">${esc(p.description)}</p>
     </section>
 
+    ${gallery}
+    ${videos}
     ${features}
     ${tech}
     ${install}
